@@ -2,14 +2,14 @@ from pylab import *
 from scipy import *
 from matplotlib import cm
 
-X = 15
-Y = 15
-Z = 15
+X = 10
+Y = 10
+Z = 30
 
-dx = 0.02
-dy = 0.02
-dz = 0.02
-dt = 0.0001
+dx = 0.1
+dy = 0.1
+dz = 0.1
+dt = 0.01
 
 Ro = 1.21
 C = 343
@@ -32,9 +32,9 @@ mic = []
 
 for n in range(5000):
     if n<len(Q):
-        P[7,7,0] += Q[n]
-
-    mic.append(P[7,7,14])
+#        P[7,7,0] += Q[n]
+        P[7,0,7]+=Q[n]
+    mic.append(P[7,14,7])
 
     for x in range(X-1):
         for y in range(Y):
